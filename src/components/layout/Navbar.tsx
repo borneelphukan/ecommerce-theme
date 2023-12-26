@@ -7,8 +7,8 @@ interface NavbarProps {}
 const Navbar: React.FC<NavbarProps> = () => {
   const [selectedLink, setSelectedLink] = useState<string | null>(null);
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  const [showPagesSubNav, setShowPagesSubNav] = useState<boolean>(false);
   const [showMobilePagesSubNav, setMobileShowPagesSubNav] = useState<boolean>(false);
-  const [showPagesNav, setPagesNav] = useState<boolean>(false);
   const [showMobileNewsSubNav, setMobileNewsSubNav] = useState<boolean>(false);
 
   const handleLinkClick = (linkText: string) => {
@@ -48,25 +48,28 @@ const Navbar: React.FC<NavbarProps> = () => {
       <div className="hidden lg:flex justify-center space-x-8 mt-4">
         <Link
           href="/"
-          className={`text-black hover:text-gray-300 uppercase ${selectedLink === "Home" ? "selected" : ""}`}
+          className={` hover:text-gray-300 uppercase ${selectedLink === "Home" ? "selected" : ""}`}
           onClick={() => handleLinkClick("Home")}
         >
           Home
         </Link>
 
-        <div className="relative">
+        <div
+          className="relative"
+        >
           <a
             href="#"
-            className={`text-black hover:text-gray-300 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
+            className={` hover:text-gray-300 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
             onClick={() => handleLinkClick("Pages")}
           >
             Women
           </a>
+
         </div>
 
         <a
-          href="#"
-          className={`text-black hover:text-gray-300 uppercase ${selectedLink === "Portfolios" ? "selected" : ""}`}
+          href="/Portfolio"
+          className={` hover:text-gray-300 uppercase ${selectedLink === "Portfolios" ? "selected" : ""}`}
           onClick={() => handleLinkClick("Portfolios")}
         >
           Men
@@ -74,62 +77,72 @@ const Navbar: React.FC<NavbarProps> = () => {
 
         <Link
           href="#"
-          className={`text-black hover:text-gray-300 uppercase ${selectedLink === "Our-Team" ? "selected" : ""}`}
+          className={` hover:text-gray-300 uppercase ${selectedLink === "Our-Team" ? "selected" : ""}`}
           onClick={() => handleLinkClick("Our-Team")}
         >
           Shop
         </Link>
 
-        <div
-          className="relative"
-          onMouseEnter={() => setPagesNav(true)}
-          onMouseLeave={() => setPagesNav(false)}
-        >
+        <div className="relative">
           <a
             href="#"
-            className={`text-black hover:text-gray-300 uppercase ${selectedLink === "News" ? "selected" : ""}`}
+            onMouseEnter={() => setShowPagesSubNav(true)}
+            onMouseLeave={() => setShowPagesSubNav(false)}
+            className={` hover:text-gray-300 uppercase ${selectedLink === "News" ? "selected" : ""}`}
             onClick={() => handleLinkClick("News")}
           >
             Pages
           </a>
-          {showPagesNav && (
+
+          {showPagesSubNav && (
             <ul
-              className="absolute left-0 mt-2 text-sm px-5 bg-slate-100 border rounded border-white w-52"
-              onMouseEnter={() => setPagesNav(true)}
-              onMouseLeave={() => setPagesNav(false)}
+              className="absolute left-0 mt-1 text-sm px-5 bg-slate-100 border rounded border-white w-52"
+              onMouseEnter={() => setShowPagesSubNav(true)}
+              onMouseLeave={() => setShowPagesSubNav(false)}
               style={{ top: "80%" }}
             >
               <li className="py-2">
-                <a href="#" className="text-black hover:text-orange-500">
+                <Link className="text-black hover:text-orange-500" href="/AboutUs">
                   Product Details
-                </a>
+                </Link>
               </li>
               <li className="py-2">
-                <a href="#" className="text-black hover:text-orange-500">
-                  Shop Cart
-                </a>
+                <Link className="text-black hover:text-orange-500" href="/ContactUs">
+                  Show Cart
+                </Link>
               </li>
               <li className="py-2">
-                <a href="#" className="text-black hover:text-orange-500">
+                <Link className="text-black hover:text-orange-500" href="/Services">
                   Checkout
-                </a>
+                </Link>
               </li>
               <li className="py-2">
-                <a href="#" className="text-black hover:text-orange-500">
+                <Link className="text-black hover:text-orange-500" href="/Testimonials">
                   Blog Details
-                </a>
+                </Link>
               </li>
             </ul>
           )}
         </div>
 
-        <div className="flex justify-center lg:mt-0">
-          <Link
-            href="/ContactUs"
-            className="bg-orange-600 text-white hover:bg-orange-800 ml-5 mb-3 p-2 rounded"
+        <div className="relative">
+          <a
+            href="#"
+            className={` hover:text-gray-300 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
+            onClick={() => handleLinkClick("Pages")}
           >
-            Contact Us
-          </Link>
+            Blog
+          </a>
+        </div>
+
+<div className="relative">
+          <a
+            href="#"
+            className={` hover:text-gray-300 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
+            onClick={() => handleLinkClick("Pages")}
+          >
+            Contact
+          </a>
         </div>
       </div>
 
@@ -138,7 +151,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         <div className="lg:hidden flex flex-col mt-1 space-y-2">
           <Link
             href="/"
-            className={`text-white hover:text-gray-300 ${selectedLink === "Home" ? "selected" : ""}`}
+            className={` hover:text-gray-300 uppercase ${selectedLink === "Home" ? "selected" : ""}`}
             onClick={() => {
               handleLinkClick("Home");
               toggleMobileMenu();
@@ -150,7 +163,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <div className="relative">
             <a
               href="#"
-              className={`text-white hover:text-orange-500 ${selectedLink === "Pages" ? "selected" : ""}`}
+              className={` hover:text-orange-500 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
               onClick={() => {
                 handleLinkClick("Pages");
                 toggleSubNavPages();
@@ -193,7 +206,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <div className="relative">
             <a
               href="#"
-              className={`text-white hover:text-orange-500 ${selectedLink === "Pages" ? "selected" : ""}`}
+              className={` hover:text-orange-500 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
               onClick={() => {
                 handleLinkClick("Pages");
                 toggleMobileMenu();
@@ -206,7 +219,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <div className="relative">
             <a
               href="#"
-              className={`text-white hover:text-orange-500 ${selectedLink === "Pages" ? "selected" : ""}`}
+              className={` hover:text-orange-500 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
               onClick={() => {
                 handleLinkClick("Pages");
                 toggleSubNavNews();
@@ -251,7 +264,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       <div className="lg:hidden flex items-center justify-end m-1">
         <button
           onClick={toggleMobileMenu}
-          className="text-white hover:text-orange-500 focus:outline-none pb-2"
+          className=" hover:text-orange-500 focus:outline-none pb-2"
           aria-label="Open Mobile Menu"
         >
           <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
