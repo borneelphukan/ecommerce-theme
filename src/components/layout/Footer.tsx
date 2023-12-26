@@ -25,17 +25,8 @@ const Footer: React.FC<FooterProps> = () => {
             <p className="text-sm text-slate-400">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt cilisis.
             </p>
-            <h1 className="text-xl text-black uppercase font-semibold py-2">Contact Info</h1>
-            <p className="text-sm">
-              Email: <span className="text-slate-400">borneelphukan@gmail.com</span>
-            </p>
-            <p className="text-sm my-1">
-              Address:{" "}
-              <span className="text-slate-400">Address Goes here</span>
-            </p>
-            <p className="text-sm my-1">
-              Phone: <span className="text-slate-400">Fax Number goes here</span>
-            </p>
+           
+           {/* Row of bank cards goes here */}
           </div>
 
           {/* Column 2 */}
