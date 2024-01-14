@@ -18,7 +18,7 @@ const categoriesData: Category[] = [
 
 const Categories: React.FC = () => {
   return (
-    <div className="px-auto overflow-hidden grid grid-cols-1 md:grid-cols-1 lg:grid-cols-6">
+    <div className="px-auto overflow-hidden grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6">
       {categoriesData.map((category, index) => (
         <div key={index} className="relative group ">
           <Image

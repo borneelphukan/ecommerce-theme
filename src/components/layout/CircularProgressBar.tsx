@@ -16,7 +16,7 @@ const CircularScrollProgressBar: React.FC = () => {
       const totalScrollHeight =
         document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = window.scrollY;
-      const percentage = (scrolled / totalScrollHeight) * 100;
+      const percentage = (scrolled / totalScrollHeight) * 115;
       setProgress(percentage);
     };
 
@@ -40,7 +40,7 @@ const CircularScrollProgressBar: React.FC = () => {
               cy="50%"
               r="45%"
               fill="transparent"
-              stroke="#ff6600"
+              stroke="#990f02"
               strokeWidth="5%"
               strokeDasharray={`${progress}, 100`}
             />
