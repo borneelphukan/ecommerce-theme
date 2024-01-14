@@ -3,6 +3,7 @@ import ThemeSwitch from "@/components/layout/ThemeSwitch";
 import CircularProgressBar from "@/components/layout/CircularProgressBar";
 import Footer from "@/components/layout/Footer";
 import Loader from "@/components/layout/Loader";
+import Categories from "@/components/Categories";
 import Head from "next/head";
 import { ReactNode, useState, useEffect } from "react";
 
@@ -24,11 +25,9 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
   return (
     <div>
       <Head>
-        <title>BDesign | Corporate Theme Template</title>
+        <title>BShop | E-Commerce Template</title>
       </Head>
-      {isLoading ? (
-        <Loader />
-      ) : (
+      {isLoading ? (<Loader />) : (
         <div className="bg-gray-100 min-h-screen">
           <Navbar />
           {/* Main content */}
@@ -40,6 +39,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
 
           <footer>
             {/* Footer will go here */}
+            <Categories/>
             <Footer />
           </footer>
         </div>

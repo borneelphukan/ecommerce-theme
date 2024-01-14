@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebook, faTwitter, faYoutube, faInstagram, faPinterest } from "@fortawesome/free-brands-svg-icons";
 
 interface FooterProps {}
 
@@ -138,13 +139,53 @@ const Footer: React.FC<FooterProps> = () => {
             </ul>
           </div>
 
-          {/* Column 4 */}
-          <div className="mb-8">
-            <h2 className="text-xl uppercase text-black font-semibold mb-4">Newsletter</h2>
-            {/* Your content for column 3 */}
-            <ul className="text-left px-24">
-            </ul>
-          </div>
+{/* Column 4 */}
+<div className="mb-8">
+  <h2 className="text-xl uppercase text-black font-semibold mb-4">Newsletter</h2>
+  {/* Email Subscription */}
+<div className="flex items-center mb-4 gap-2">
+  <input
+    type="email"
+    placeholder="Email"
+    className="py-3 px-3 border border-gray-300 rounded-full w-full"
+  />
+  <button className="bg-red-700 text-white py-3 px-4 rounded-full -ml-1">
+    Subscribe
+  </button>
+</div>
+
+
+{/* Social Media Icons */}
+<div className="flex space-x-4">
+  {/* Facebook */}
+  <FontAwesomeIcon
+    icon={faFacebook}
+    className="text-gray-700 bg-gray-300 rounded-full p-3 hover:bg-gray-500 hover:text-white"
+  />
+  {/* Twitter */}
+  <FontAwesomeIcon
+    icon={faTwitter}
+    className="text-gray-700 bg-gray-300 rounded-full p-3 hover:bg-gray-500 hover:text-white"
+  />
+  {/* Youtube */}
+  <FontAwesomeIcon
+    icon={faYoutube}
+    className="text-gray-700 bg-gray-300 rounded-full p-3 hover:bg-gray-500 hover:text-white"
+  />
+  {/* Instagram */}
+  <FontAwesomeIcon
+    icon={faInstagram}
+    className="text-gray-700 bg-gray-300 rounded-full p-3 hover:bg-gray-500 hover:text-white"
+  />
+  {/* Pinterest */}
+  <FontAwesomeIcon
+    icon={faPinterest}
+    className="text-gray-700 bg-gray-300 rounded-full p-3 hover:bg-gray-500 hover:text-white"
+  />
+</div>
+
+</div>
+
 
         </div>
       </div>
