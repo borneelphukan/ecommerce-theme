@@ -8,7 +8,7 @@ interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
   return (
-    <footer className="text-white text-center py-8 relative">
+    <footer className=" text-center py-8 relative">
       <div className="container mx-auto flex flex-col items-center justify-center">
         <div className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-8 flex-grow">
           {/* Column 1 */}
@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = () => {
 
           {/* Column 2 */}
           <div className="mb-8">
-            <h2 className="text-xl uppercase text-black font-semibold mb-2">Quick Links</h2>
+            <h2 className="text-xl uppercase font-semibold mb-2">Quick Links</h2>
             {/* Your content for column 2 */}
             <ul className="text-left px-24">
               <li className="py-2">
@@ -86,7 +86,7 @@ const Footer: React.FC<FooterProps> = () => {
 
           {/* Column 3 */}
           <div className="mb-8">
-            <h2 className="text-xl uppercase text-black font-semibold mb-4">Account</h2>
+            <h2 className="text-xl uppercase font-semibold mb-4">Account</h2>
             {/* Your content for column 3 */}
             <ul className="text-left px-24">
               <li className="py-1">
@@ -141,7 +141,7 @@ const Footer: React.FC<FooterProps> = () => {
 
 {/* Column 4 */}
 <div className="mb-8">
-  <h2 className="text-xl uppercase text-black font-semibold mb-4">Newsletter</h2>
+  <h2 className="text-xl uppercase font-semibold mb-4">Newsletter</h2>
   {/* Email Subscription */}
 <div className="flex items-center mb-4 gap-2">
   <input

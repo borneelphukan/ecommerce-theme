@@ -29,7 +29,7 @@ const Categories: React.FC = () => {
             className="h-full w-30 transition duration-300 transform"
           />
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-60 transition-opacity bg-white duration-300 ease-in-out hover:opacity-40">
-            <p className="font-bold text-lg">{category.name}</p>
+            <p className="text-black text-3xl">{category.name}</p>
           </div>
         </div>
       ))}
