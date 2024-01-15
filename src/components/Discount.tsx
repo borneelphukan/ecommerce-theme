@@ -47,11 +47,11 @@ const Discount: React.FC = () => {
   }, []);
 
   // Format the countdown values as strings with leading zeros
-  const formattedCountdown: React.ReactNode[] = Object.entries(countdown).map(([unit, value]) => (
-    <span key={unit}>
-      {value} {unit.charAt(0).toUpperCase() + unit.slice(1)}{' '}
-    </span>
-  ));
+const formattedCountdown: React.ReactNode[] = Object.entries(countdown).map(([unit, value]: [string, any]) => (
+  <span key={unit}>
+    {value} {unit.charAt(0).toUpperCase() + unit.slice(1)}{' '}
+  </span>
+));
 
   return (
     <div>
