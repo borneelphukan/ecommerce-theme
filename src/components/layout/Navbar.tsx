@@ -102,22 +102,22 @@ const Navbar: React.FC<NavbarProps> = () => {
               style={{ top: "80%" }}
             >
               <li className="py-2">
-                <Link className="text-black hover:text-orange-500" href="/AboutUs">
+                <Link className="text-black hover:text-red-700" href="/AboutUs">
                   Product Details
                 </Link>
               </li>
               <li className="py-2">
-                <Link className="text-black hover:text-orange-500" href="/ContactUs">
+                <Link className="text-black hover:text-red-700" href="/ContactUs">
                   Show Cart
                 </Link>
               </li>
               <li className="py-2">
-                <Link className="text-black hover:text-orange-500" href="/Services">
+                <Link className="text-black hover:text-red-700" href="/Services">
                   Checkout
                 </Link>
               </li>
               <li className="py-2">
-                <Link className="text-black hover:text-orange-500" href="/Testimonials">
+                <Link className="text-black hover:text-red-700" href="/Testimonials">
                   Blog Details
                 </Link>
               </li>
@@ -163,108 +163,113 @@ const Navbar: React.FC<NavbarProps> = () => {
           <div className="relative">
             <a
               href="#"
-              className={` hover:text-orange-500 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
+              className={` hover:text-red-700 uppercase ${selectedLink === "Women" ? "selected" : ""}`}
               onClick={() => {
-                handleLinkClick("Pages");
+                handleLinkClick("Women");
                 toggleSubNavPages();
               }}
             >
-              Pages
+              WOMEN
             </a>
-
-            {showMobilePagesSubNav && (
-              <ul className="relative left-0 mt-2 text-sm px-5 bg-black w-full">
-                <li className="py-2">
-                  <Link href="/AboutUs" className="text-white hover:text-orange-500">
-                    About Us
-                  </Link>
-                </li>
-                <li className="py-2">
-                  <Link href="/ContactUs" className="text-white hover:text-orange-500">
-                    Contact Us
-                  </Link>
-                </li>
-                <li className="py-2">
-                  <Link href="/Services" className="text-white hover:text-orange-500">
-                    Services
-                  </Link>
-                </li>
-                <li className="py-2">
-                  <Link href="/Testimonials" className="text-white hover:text-orange-500">
-                    Testimonials
-                  </Link>
-                </li>
-                <li className="py-2">
-                  <a href="/Error404" className="text-white hover:text-orange-500">
-                    Error 404
-                  </a>
-                </li>
-              </ul>
-            )}
           </div>
 
           <div className="relative">
             <a
               href="#"
-              className={` hover:text-orange-500 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
+              className={` hover:text-red-700 uppercase ${selectedLink === "Men" ? "selected" : ""}`}
               onClick={() => {
-                handleLinkClick("Pages");
+                handleLinkClick("Men");
                 toggleMobileMenu();
               }}
             >
-              Portfolio
+              MEN
             </a>
           </div>
 
           <div className="relative">
             <a
               href="#"
-              className={` hover:text-orange-500 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
+              className={` hover:text-red-700 uppercase ${selectedLink === "Shop" ? "selected" : ""}`}
+              onClick={() => {
+                handleLinkClick("Shop");
+                toggleSubNavPages();
+              }}
+            >
+              SHOP
+            </a>
+          </div>
+
+          <div className="relative">
+            <a
+              href="#"
+              className={` hover:text-red-700 uppercase ${selectedLink === "Pages" ? "selected" : ""}`}
               onClick={() => {
                 handleLinkClick("Pages");
                 toggleSubNavNews();
               }}
             >
-              News
+              PAGES
             </a>
             {showMobileNewsSubNav && (
-              <ul className="relative left-0 mt-2 text-sm px-5 bg-black w-full">
+              <ul className="relative left-0 mt-2 text-sm px-5 w-full">
                 <li className="py-2">
-                  <Link href="/Classic" className="text-white hover:text-orange-500">
-                    Classic
+                  <Link href="/ProductDetails" className=" hover:text-red-700">
+                    Product Details
                   </Link>
                 </li>
                 <li className="py-2">
-                  <Link href="/Grid" className="text-white hover:text-orange-500">
-                    Grid
+                  <Link href="/ShowCart" className=" hover:text-red-700">
+                    Show Cart
                   </Link>
                 </li>
                 <li className="py-2">
-                  <Link href="/Masonry" className="text-white hover:text-orange-500">
-                    Masonry
+                  <Link href="/Checkout" className=" hover:text-red-700">
+                    Checkout
                   </Link>
                 </li>
                 <li className="py-2">
-                  <Link href="/Timeline" className="text-white hover:text-orange-500">
-                    Timeline
-                  </Link>
-                </li>
-                <li className="py-2">
-                  <a href="/SinglePost" className="text-white hover:text-orange-500">
-                    Single
+                  <a href="/BlogDetails" className=" hover:text-red-700">
+                    Blog Details
                   </a>
                 </li>
               </ul>
             )}
+
+            <div className="relative">
+            <a
+              href="#"
+              className={` hover:text-red-700 uppercase ${selectedLink === "Blog" ? "selected" : ""}`}
+              onClick={() => {
+                handleLinkClick("Blog");
+                toggleSubNavPages();
+              }}
+            >
+              BLOG
+            </a>
+          </div>
+
+          <div className="relative">
+            <a
+              href="#"
+              className={` hover:text-red-700 uppercase ${selectedLink === "Contact" ? "selected" : ""}`}
+              onClick={() => {
+                handleLinkClick("Contact");
+                toggleSubNavPages();
+              }}
+            >
+              CONTACT
+            </a>
+          </div>
           </div>
         </div>
       )}
+
 
       {/* Hamburger Icon (Mobile) */}
       <div className="lg:hidden flex items-center justify-end m-1">
         <button
           onClick={toggleMobileMenu}
-          className=" hover:text-orange-500 focus:outline-none pb-2"
+          className=" hover:text-red-700 focus:outline-none pb-2"
           aria-label="Open Mobile Menu"
         >
           <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
